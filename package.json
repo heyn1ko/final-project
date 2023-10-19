@@ -1,0 +1,27 @@
+{
+  "name": "final-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.4",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint-config-upleveled": "^5.1.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-upleveled": "^1.0.2",
+    "typescript": "^5"
+  }
+}
