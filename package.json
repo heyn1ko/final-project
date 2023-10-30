@@ -6,22 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "ley --require tsm"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
     "next": "13.5.6",
-    "react": "^18",
+    "postgres": "^3.4.0",
+    "react": "latest",
     "react-dom": "^18",
+    "react-router": "^6.17.0",
     "sass": "^1.69.4",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint-config-upleveled": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint-config-upleveled": "^6.1.1",
+    "ley": "^0.8.1",
+    "prettier-plugin-embed": "^0.2.5",
+    "prettier-plugin-sql": "^0.15.1",
     "stylelint": "^15.11.0",
     "stylelint-config-upleveled": "^1.0.2",
+    "tailwindcss": "^3.3.5",
+    "tsm": "^2.3.0",
     "typescript": "^5"
   }
 }
