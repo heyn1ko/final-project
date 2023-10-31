@@ -21,10 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Link href="/">Home</Link>
-        <Link href="/spaces">Spaces</Link>
+
         <Link href="/map">Map</Link>
+
         <Link href="/programme">Programme</Link>
+
         <Link href="/contact">Contact</Link>
+
         <Link href="/myAccount">My Account</Link>
 
         {children}

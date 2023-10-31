@@ -1,9 +1,11 @@
 import crypto from 'node:crypto';
 import bcrypt from 'bcrypt';
+import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createSession } from '../../../database/session';
 import { getUserWithPasswordHashByEmail } from '../../../database/users';
+import { secureCookieOptions } from '../../../util/cookies';
 
 const signInSchema = z.object({
   email: z.string().min(3),
@@ -21,12 +23,11 @@ export type SignInResponseBodyPost =
 export async function POST(
   request: NextRequest,
 ): Promise<NextResponse<SignInResponseBodyPost>> {
-  // Task: Implement the user login workflow
-
-  // 1. Get the user data from the request
+  // Task: Implement the user registration workflow
   const body = await request.json();
-
+  // console.log('body:', body);
   // 2. Validate the user data
+
   const result = signInSchema.safeParse(body);
 
   if (!result.success) {
@@ -37,7 +38,6 @@ export async function POST(
       },
     );
   }
-
   // 3. verify the user credentials
   const userWithPasswordHash = await getUserWithPasswordHashByEmail(
     result.data.email,
@@ -49,40 +49,52 @@ export async function POST(
       { status: 403 },
     );
   }
-
+  // console.log('Check:', userWithPasswordHash);
   // 4. Validate the user password by comparing with hashed password
   const isPasswordValid = await bcrypt.compare(
     result.data.password,
     userWithPasswordHash.passwordHash,
   );
-  console.log('Check Valid :', userWithPasswordHash);
-
   if (!isPasswordValid) {
     return NextResponse.json(
-      { errors: [{ message: 'email or password not valid' }] },
+      { errors: [{ message: 'username or password not valid' }] },
       {
         status: 401,
       },
     );
   }
-  //  Coming in subsequent lecture
-  // 4. Create a token
+  // 5. Create a token
   const token = crypto.randomBytes(100).toString('base64');
-  // console.log('Token', token);
-  // 5. Create the session record
+  // 6. Create the session record
   const session = await createSession(userWithPasswordHash.id, token);
+  console.log('session:', session);
   if (!session) {
     return NextResponse.json(
       { errors: [{ message: 'Error creating the new session' }] },
-      { status: 401 },
+      {
+        status: 401,
+      },
     );
   }
-  // 6. Send the new cookie in the headers
+  // 7.Send the new cookie to Headers
 
-  // 6. Return the new user information without the password hash
+  // cookies().set({
+  //   name: 'sessionToken',
+  //   value: session.token,
+  //   httpOnly: true,
+  //   path: '/',
+  //   secure: process.env.NODE_ENV === 'production',
+  //   maxAge: 60 * 60 * 24, // Expires in 24H
+  //   sameSite: 'lax', // this prevents CSRF attacks
+  // });
+
+  cookies().set({
+    name: 'sessionToken',
+    value: session.token,
+    ...secureCookieOptions,
+  });
+  // console.log('Result:', newUser);
   return NextResponse.json({
-    user: {
-      email: userWithPasswordHash.email,
-    },
+    user: { email: userWithPasswordHash.email },
   });
 }

@@ -3,22 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "next lint",
-    "migrate": "ley --require tsm"
+    "migrate": "ley --require tsm",
+    "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.16",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
     "next": "13.5.6",
+    "postcss": "^8.4.31",
     "postgres": "^3.4.0",
     "react": "latest",
     "react-dom": "^18",
     "react-router": "^6.17.0",
     "sass": "^1.69.4",
     "sharp": "^0.32.6",
+    "tailwind": "^4.0.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

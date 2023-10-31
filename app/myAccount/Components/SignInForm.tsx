@@ -1,17 +1,17 @@
 'use client';
 
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 // import { getSafeReturnToPath } from '../../../util/validation';
 import { SignInResponseBodyPost } from '../../api/signIn/route';
 
-type Props = { returnTo?: string | string[] };
+// type Props = { returnTo?: string | string[] };
 
-export default function SignInForm(props: Props) {
+export default function SignInForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
-  // const router = useRouter();
+  const router = useRouter();
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -30,6 +30,7 @@ export default function SignInForm(props: Props) {
       setErrors(data.errors);
       return;
     }
+    router.push('/');
 
     //  This is not the secured way of doing returnTo
     // if (props.returnTo) {
