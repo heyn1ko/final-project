@@ -29,7 +29,7 @@ export default function SignInForm(props: Props) {
       setErrors(data.errors);
       return;
     }
-    router.push(getSafeReturnToPath(props.returnTo) || `/`);
+    router.push(getSafeReturnToPath(props.returnTo) || `/admin`);
     // router.push('/admin');
 
     //  This is not the secured way of doing returnTo

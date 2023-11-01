@@ -1,5 +1,4 @@
 import SignInForm from './Components/SignInForm';
-import SignOutButton from './Components/SignOutButton';
 import SignUpForm from './Components/SignUpForm';
 
 export default function MyAccount() {
@@ -8,8 +7,6 @@ export default function MyAccount() {
       <SignInForm />
 
       <SignUpForm />
-
-      <SignOutButton />
     </div>
   );
 }
