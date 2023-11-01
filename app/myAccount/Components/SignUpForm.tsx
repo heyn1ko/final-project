@@ -35,7 +35,7 @@ export default function SignUpForm() {
           password
           <input onChange={(event) => setPassword(event.currentTarget.value)} />
         </label>
-        <button>Sign Up</button>
+        <button >Sign Up</button>
         {errors.map((error) => (
           <div className="error" key={`error-${error.message}`}>
             Error: {error.message}
