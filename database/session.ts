@@ -40,3 +40,18 @@ export const deleteSessionByToken = cache(async (token: string) => {
 
   return session;
 });
+
+export const getValidSessionByToken = cache(async (token: string) => {
+  const [session] = await sql<{ id: number; token: string }[]>`
+    SELECT
+      sessions.id,
+      sessions.token
+    FROM
+      sessions
+    WHERE
+      sessions.token = ${token}
+      AND sessions.expiry_timestamp > now ()
+  `;
+
+  return session;
+});

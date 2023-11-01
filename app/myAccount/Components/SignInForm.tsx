@@ -1,13 +1,12 @@
 'use client';
-
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-// import { getSafeReturnToPath } from '../../../util/validation';
+import { getSafeReturnToPath } from '../../../util/validation';
 import { SignInResponseBodyPost } from '../../api/signIn/route';
 
-// type Props = { returnTo?: string | string[] };
+type Props = { returnTo?: string | string[] };
 
-export default function SignInForm() {
+export default function SignInForm(props: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
@@ -30,13 +29,15 @@ export default function SignInForm() {
       setErrors(data.errors);
       return;
     }
-    router.push('/');
+    router.push(getSafeReturnToPath(props.returnTo) || `/`);
+    // router.push('/admin');
 
     //  This is not the secured way of doing returnTo
     // if (props.returnTo) {
     //   console.log('Checks Return to: ', props.returnTo);
     //   router.push(props.returnTo);
     // }
+    router.refresh();
   }
 
   return (
