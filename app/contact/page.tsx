@@ -3,5 +3,5 @@ export const metadata = {
   description: 'Independent Art Spaces',
 };
 export default function Contact() {
-  return <section>Contact me!</section>;
+  return <section className="pl-10 pt-10">Contact me!</section>;
 }

@@ -18,7 +18,7 @@ export default async function AdminPage() {
   // 4. If the sessionToken cookie is valid, allow access to admin page
   // const animals = await getAnimals();
   return (
-    <section>
+    <section className="pl-10 pt-10">
       Admin page!
       <SignOutButton />
     </section>

@@ -4,7 +4,7 @@ export const metadata = {
 };
 export default function Programme() {
   return (
-    <main>
+    <main className="pl-10 pt-10">
       <div>
         <h1>This is the programme</h1>
       </div>

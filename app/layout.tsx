@@ -1,8 +1,6 @@
 import './globals.css';
-import Link from 'next/link';
 import React from 'react';
-
-// const inter = Inter({ subsets: ['latin'] });
+import NavBar from './myAccount/Components/NavBar';
 
 export const metadata = {
   title: {
@@ -20,18 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Link href="/">Home</Link>
-
-        <Link href="/map">Map</Link>
-
-        <Link href="/programme">Programme</Link>
-
-        <Link href="/contact">Contact</Link>
-
-        <Link href="/myAccount">My Account</Link>
-
-        {/* <Link href="/admin">Admin</Link> */}
-
+        <NavBar />
         {children}
       </body>
     </html>
