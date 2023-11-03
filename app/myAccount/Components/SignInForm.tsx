@@ -45,7 +45,8 @@ export default function SignInForm(props: Props) {
       className="font-display tracking-widest text-lg"
       onSubmit={async (event) => await handleRegister(event)}
     >
-      DO YOU HAVE AN ACCOUNT? PLEASE LOG IN HERE.
+      DO YOU HAVE AN ACCOUNT? <br />
+      PLEASE LOG IN HERE.
       <br />
       <br />
       <label>

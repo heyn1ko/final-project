@@ -29,7 +29,8 @@ export default function SignUpForm() {
       className="font-display tracking-widest text-lg"
       onSubmit={async (event) => await handleRegister(event)}
     >
-      OH, YOU DON'T HAVE AN ACCOUNT? PLEASE SIGN UP HERE.
+      OH, YOU DON'T ? <br />
+      THEN, PLEASE SIGN UP HERE.
       <br />
       <br />
       <label>

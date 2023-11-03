@@ -1,18 +1,9 @@
 import Link from 'next/link';
 
-// 'use client';
-// import { DropDownMenu } from './DropDownMenu';
-
 export default function NavBar() {
   return (
-    <div
-      className="grid grid-cols-3 gap-x-1 pl-10 pr-10 pb-10 pt-10
-
-    "
-    >
+    <div className=" grid grid-cols-3 gap-x-1 pl-10 pr-10 pb-10 pt-10">
       <div>
-        {/* <DropDownMenu /> */}
-
         <Link
           href="/"
           className="font-display font-[900] flex items-center gap-x-2 p-1 text-4xl tracking-widest	hover:text-[#0000EE]	"
@@ -47,10 +38,10 @@ export default function NavBar() {
           CONTACT
         </Link>
       </div>
-      <div className="fixed top-0  right-10 pb-10 pt-10">
+      <div className="absolute right-10	pb-10 ">
         <Link
           href="/myAccount"
-          className="font-display font-[500]  items-center gap-x-2 p-1 text-4xl gap-80 text-gray-400	hover:text-black
+          className="font-display font-[500]  items-center gap-x-2 p-1 text-4xl gap-80 text-indigo-300	hover:text-[#0000EE]
 
           "
         >
