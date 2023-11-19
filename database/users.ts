@@ -48,3 +48,32 @@ export const getUserWithPasswordHashByEmail = cache(async (email: string) => {
   `;
   return user;
 });
+
+export const getUserById = cache(async (id: number) => {
+  // Postgres always returns an array
+  const [user] = await sql<User[]>`
+    SELECT
+      *
+    FROM
+      users
+    WHERE
+      id = ${id}
+  `;
+  return user;
+});
+
+export const getUserBySessionToken = cache(async (token: string) => {
+  const [user] = await sql<User[]>`
+    SELECT
+      users.id,
+      users.email
+    FROM
+      users
+      INNER JOIN sessions ON (
+        sessions.token = ${token}
+        AND sessions.user_id = users.id
+        AND sessions.expiry_timestamp > now ()
+      )
+  `;
+  return user;
+});

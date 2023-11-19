@@ -10,7 +10,7 @@ export async function signOut() {
   const token = cookieStore.get('sessionToken');
   //  Delete the session from the DATABASE based on the token
   if (token) await deleteSessionByToken(token.value);
-  console.log('Token:', token);
+  // console.log('Token:', token);
 
   // Delete the session cookie from the BROWSER, maxAge -1 is a JS time that is no longer now
   cookieStore.set('sessionToken', '', {

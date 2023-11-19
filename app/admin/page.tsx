@@ -1,7 +1,8 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getValidSessionByToken } from '../../database/session';
-import SignOutButton from '../myAccount/Components/SignOutButton';
+import { getUserBySessionToken } from '../../database/users';
+import AdminSpaceForm from './adminSpace/AdminSpaceForm';
 
 export default async function AdminPage() {
   // Task: Add redirect to home if user is logged in
@@ -11,16 +12,20 @@ export default async function AdminPage() {
   const session =
     sessionTokenCookie &&
     (await getValidSessionByToken(sessionTokenCookie.value));
+  const user =
+    sessionTokenCookie &&
+    (await getUserBySessionToken(sessionTokenCookie.value));
+  if (!user) redirect('/myAccount');
 
   // 3. If the sessionToken cookie is invalid or doesn't exist, redirect to login with returnTo
   if (!session) redirect('myAccount?returnTo=/admin');
 
   // 4. If the sessionToken cookie is valid, allow access to admin page
-  // const animals = await getAnimals();
+
   return (
-    <section className="pl-10 pt-10">
-      Admin page!
-      <SignOutButton />
-    </section>
+    <div className="pl-10 pt-10">
+      {' '}
+      <AdminSpaceForm userId={user.id} />
+    </div>
   );
 }

@@ -25,6 +25,8 @@ export async function POST(
   request: NextRequest,
 ): Promise<NextResponse<SignUpResponseBodyPost>> {
   // Task: Implement the user registration workflow
+  // 1. Get the user data from the request
+
   const body = await request.json();
   // 2. Validate the user data
 

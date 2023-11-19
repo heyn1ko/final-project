@@ -1,12 +1,17 @@
-export const metadata = {
-  title: 'Index',
-  description: 'Independent Art Spaces',
-};
+import Image from 'next/image';
+import MapImg from '../../util/images/map.png';
+
 export default function Map() {
   return (
-    <main className="pl-10 pt-10">
-      <div>
-        <h1>This is the map</h1>
+    <main className="pl-10 pt-10 pb-36 pr-10 flex ">
+      <div className="border-stone-200 border-8 rounded-xl max-w-full max-h-full">
+        <Image
+          src={MapImg}
+          alt="Photograph of a map"
+          width={1300}
+          height={500}
+          className="rounded-xl"
+        />
       </div>
     </main>
   );

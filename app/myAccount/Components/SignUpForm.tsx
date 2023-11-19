@@ -1,5 +1,7 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { getSafeReturnToPath } from '../../../util/validation';
 import { SignUpResponseBodyPost } from '../../api/signUp/route';
 
 export default function SignUpForm() {
@@ -36,7 +38,7 @@ export default function SignUpForm() {
       <label>
         Email
         <input
-          className="border-gray-300 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500 block  w-96  p-2.5 bg-zinc-400	dark:placeholder-gray-200 dark:text-white  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="input"
           type="Email"
           placeholder="Email"
           required
@@ -46,7 +48,7 @@ export default function SignUpForm() {
       <label>
         Password
         <input
-          className="border-gray-300 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500 block  w-96  p-2.5 bg-zinc-400	dark:placeholder-gray-200 dark:text-white  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="input"
           type="Password"
           placeholder="Password"
           required
@@ -54,9 +56,7 @@ export default function SignUpForm() {
         />
       </label>
       <br />
-      <button className=" font-display tracking-widest font-[500] text-[#0000EE] hover:text-white border border-[#0000EE] hover:bg-[#0000EE] focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-xl w-52 h-12 px-5 py-2.5 text-center mr-2 mb-2 dark:border-[#0000EE] dark:text-[#0000EE] dark:hover:text-white dark:hover:bg-[#0000EE] dark:focus:ring-[#0000EE]">
-        SIGN UP
-      </button>
+      <button className="signButton">SIGN UP</button>
       {errors.map((error) => (
         <div className="error" key={`error-${error.message}`}>
           Error: {error.message}

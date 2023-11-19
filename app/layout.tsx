@@ -1,5 +1,6 @@
 import './globals.css';
 import React from 'react';
+import Footer from './myAccount/Components/Footer';
 import NavBar from './myAccount/Components/NavBar';
 
 export const metadata = {
@@ -17,9 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-200">
+      <body className="pb-20 h-full bg-zinc-300 ">
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
