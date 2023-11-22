@@ -8,7 +8,7 @@ export const metadata = {
     default: 'Home Page | Index',
     template: '%s | Index',
   },
-  description: 'Curated Interior Finds',
+  description: 'Independent Art Spaces',
 };
 
 export default function RootLayout({

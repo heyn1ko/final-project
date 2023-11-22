@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withTM = require('next-transpile-modules')(['tailwindcss']);
+
+module.exports = withTM({
   experimental: {
     typedRoutes: true,
     serverActions: true,
@@ -10,6 +12,4 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-};
-
-module.exports = nextConfig;
+});
