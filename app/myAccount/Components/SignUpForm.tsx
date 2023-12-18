@@ -14,7 +14,6 @@ export default function SignUpForm(props: Props) {
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     const response = await fetch('/api/signUp', {
       method: 'POST',
       body: JSON.stringify({
