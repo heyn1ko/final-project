@@ -1,5 +1,5 @@
 import 'server-only';
-import { unstable_noStore as noStore } from 'next/cache';
+import { headers } from 'next/headers';
 import postgres, { Sql } from 'postgres';
 import { setEnvironmentVariables } from '../util/config.mjs';
 
@@ -22,18 +22,23 @@ function connectOneTimeToDatabase() {
     });
   }
 
-  // Use Next.js Dynamic Rendering in all database queries:
+  // Workaround to force Next.js Dynamic Rendering:
   //
-  // Wrap sql`` tagged template function to call `noStore()` from
-  // next/cache before each database query. `noStore()` is a
+  // Wrap sql`` tagged template function to call `headers()` from
+  // next/headers before each database query. `headers()` is a
   // Next.js Dynamic Function, which causes the page to use
-  // Dynamic Rendering
+  // Dynamic Rendering.
   //
   // https://nextjs.org/docs/app/building-your-application/rendering/static-and-dynamic-rendering
+  //
+  // Ideally there would something built into Next.js for this,
+  // which has been requested here:
+  //
+  // https://github.com/vercel/next.js/discussions/50695
   return ((
     ...sqlParameters: Parameters<typeof globalThis.postgresSqlClient>
   ) => {
-    noStore();
+    headers();
     return globalThis.postgresSqlClient(...sqlParameters);
   }) as typeof globalThis.postgresSqlClient;
 }

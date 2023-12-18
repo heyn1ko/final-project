@@ -4,10 +4,14 @@ import { useState } from 'react';
 import { getSafeReturnToPath } from '../../../util/validation';
 import { SignUpResponseBodyPost } from '../../api/signUp/route';
 
-export default function SignUpForm() {
+type Props = { returnTo?: string | string[] };
+
+export default function SignUpForm(props: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
+  const router = useRouter();
+
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -24,6 +28,9 @@ export default function SignUpForm() {
       setErrors(data.errors);
       return;
     }
+    router.push(getSafeReturnToPath(props.returnTo) || `/admin`);
+
+    router.refresh();
   }
 
   return (

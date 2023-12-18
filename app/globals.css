@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-display {
+  font-family: 'Geologica', sans-serif;
+}
+
 .input {
   @apply border-gray-300 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500 block  w-96  p-2.5 bg-zinc-400	dark:placeholder-gray-200 dark:text-white  dark:focus:ring-blue-500 dark:focus:border-blue-500;
 }

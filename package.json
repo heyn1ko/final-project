@@ -10,11 +10,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
     "next": "13.5.6",
-    "next-transpile-modules": "^10.0.1",
     "postcss": "^8.4.31",
     "postgres": "^3.4.0",
     "react": "latest",
@@ -26,6 +26,8 @@
     "sass": "^1.69.4",
     "sharp": "^0.32.6",
     "tailwindcss": "^3.3.5",
+    "ley": "^0.8.1",
+    "tsm": "^2.3.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -36,12 +38,10 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "eslint-config-upleveled": "^6.1.1",
-    "ley": "^0.8.1",
     "prettier-plugin-embed": "^0.2.5",
     "prettier-plugin-sql": "^0.15.1",
     "stylelint": "^15.11.0",
     "stylelint-config-upleveled": "^1.0.2",
-    "tsm": "^2.3.0",
     "typescript": "^5"
   }
 }
