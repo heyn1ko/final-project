@@ -2,7 +2,7 @@ FINAL PROJECT
 
 ---
 
-HYLE
+INDEX
 
 ---
 

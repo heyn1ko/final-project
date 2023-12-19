@@ -7,14 +7,14 @@ export default function AdminSideBar() {
         <ul>
           <li>
             <Link href="/admin">
-              <div className="text-cyan-800 font-display font-[900] flex items-center gap-x-2 p-1 text-3xl tracking-widest hover:text-[#0000EE]">
+              <div className="text-cyan-800 font-display font-[900] flex items-center gap-x-2 p-1 text-2xl tracking-widest hover:text-[#0000EE]">
                 Space
               </div>
             </Link>
           </li>
           <li>
             <Link href="/admin/adminProgramme">
-              <div className="text-cyan-800 font-display font-[900] flex items-center gap-x-2 p-1 text-3xl tracking-widest hover:text-[#0000EE]">
+              <div className="text-cyan-800 font-display font-[900] flex items-center gap-x-2 p-1 text-2xl tracking-widest hover:text-[#0000EE]">
                 Programme
               </div>
             </Link>
