@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Index',
+  title: 'Programme',
   description: 'Independent Art Spaces',
 };
 export default function Programme() {

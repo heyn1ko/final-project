@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import MapImg from '../../util/images/map.png';
 
+export const metadata = {
+  title: 'Map of the Art Spaces | Index',
+  description: 'Independent Art Spaces',
+};
 export default function Map() {
   return (
     <main className="pl-10 pt-10 pb-36 pr-10 flex ">

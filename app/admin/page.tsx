@@ -4,6 +4,10 @@ import { getValidSessionByToken } from '../../database/session';
 import { getUserBySessionToken } from '../../database/users';
 import AdminSpaceForm from './adminSpace/AdminSpaceForm';
 
+export const metadata = {
+  title: 'My Account',
+  description: 'Independent Art Spaces',
+};
 export default async function AdminPage() {
   // Task: Add redirect to home if user is logged in
   // 1. Checking if the sessionToken cookie exists

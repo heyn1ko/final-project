@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Index',
+  title: 'List of the Art Spaces',
   description: 'Independent Art Spaces',
 };
 export default function Spaces() {
