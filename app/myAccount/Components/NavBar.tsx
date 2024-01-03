@@ -39,7 +39,7 @@ export default async function NavBar() {
         </Link>
         <hr className="w-35 h-1.5 my-10 pl-10 bg-gray-100 border-0 md:my-10 dark:bg-gray-700" />
       </div>
-      <div className="absolute right-10	pb-10 font-display font-[500]  items-center gap-x-2 p-1 text-2xl gap-80 text-cyan-800	hover:text-[#0000EE]">
+      <div className="absolute right-10	pb-10 font-display font-[500]  items-center gap-x-2 p-1 text-xl gap-80 text-black-800	hover:text-[#0000EE]">
         {user ? (
           <form action={signOut}>
             <button>Sign Out</button>

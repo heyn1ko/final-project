@@ -1,11 +1,5 @@
-FINAL PROJECT
+## FINAL PROJECT | INDEX
 
----
-
-INDEX
-
----
-
-Index is a platform for the independent art spaces in Vienna. Each space can create their own profile, add exhibition and events. The project aims to be a database for anyone to come and check the art events in the city in these spaces and also invites the spaces to re-think how their premises function and furthermore opens a conversation on the role of art in our society
-
+<h2>Index is a platform for the independent art spaces in Vienna. Each space can create their own profile where they can add their exhibitions and/or events. The project aims to be a public database for anyone who wishes to check the events in Vienna.
+At the same time the platform is structured in a way to include people with disabilities but also the app itself is an ongoing project for me to expand my knowledge in digital a11y.</h2>
 ---

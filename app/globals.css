@@ -31,8 +31,3 @@
 .subHeaderPublic {
   @apply font-display font-[900] text-xl text-gray-800 tracking-wider rounded-md  pl-3 pt-2 pb-1 w-[50vw];
 }
-/* body {
-  background-image: url(' ../../../util/images/Hana.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
