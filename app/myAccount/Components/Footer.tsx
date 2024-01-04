@@ -13,11 +13,11 @@ export default function Footer() {
         <p>FOLLOW US ON</p>
         {/* Your logos here */}
         <div className="flex space-x-2">
-          <Image src={FcbkImg} alt="Logo of Facebook" width={40} height={40} />
-          <Image src={TktkImg} alt="Logo of TikTok" width={40} height={40} />
-          <Image src={XImg} alt="Logo of X" width={40} height={40} />
-          <Image src={InstImg} alt="Logo of Instagram" width={40} height={40} />
-          <Image src={YtbImg} alt="Logo of YouTube" width={40} height={40} />
+          <Image src={FcbkImg} alt="Logo of Facebook" width={30} height={30} />
+          <Image src={TktkImg} alt="Logo of TikTok" width={30} height={30} />
+          <Image src={XImg} alt="Logo of X" width={30} height={30} />
+          <Image src={InstImg} alt="Logo of Instagram" width={30} height={30} />
+          <Image src={YtbImg} alt="Logo of YouTube" width={30} height={30} />
         </div>
       </div>
       {/* Left Side */}

@@ -5,7 +5,7 @@ export const metadata = {
 export default function Spaces() {
   return (
     <main className="pl-10 pb-16 pr-10 ">
-      <h1 className="font-display  text-cyan-800 font-[900] text-3xl tracking-wider ">
+      <h1 className="font-display  text-cyan-800 font-[900] text-xl tracking-wider ">
         GALLERY SPACES INDEX{' '}
       </h1>
 
@@ -15,19 +15,20 @@ export default function Spaces() {
           <h2 className="subHeaderPublic">TYPE</h2>
           <label>
             Exhibition
-            <input type="radio" className="h-6 w-6 mr-2 ml-3" />
-            <label>
-              Event{}
-              <input type="radio" className="h-6 w-6 mr-2 ml-3" />
-            </label>
+            <input type="radio" className="text-md h-6 w-6 mr-2 ml-3" />
+          </label>
+          <label>
+            Event{}
+            <input type="radio" className="text-md h-6 w-6 mr-2 ml-3" />
           </label>
           <hr className="w-full h-2 my-10 left-0 bg-gray-100 border-0 md:my-10 dark:bg-stone-200 rounded-lg" />
+
           {/* Second Section: Accessibility Section */}
           <div className=" pl-3 pb-3  ">
             <h2 className="subHeaderPublic">ACCESSIBILITY</h2>
             <label>
               Mobility{' '}
-              <input type="checkbox" className="h-6 w-6 mr-2 ml-3 pt-6" />
+              <input type="checkbox" className=" h-6 w-6 mr-2 ml-3 pt-6" />
             </label>
             <label>
               Visual <input type="checkbox" className="h-6 w-6 mr-2 ml-3" />

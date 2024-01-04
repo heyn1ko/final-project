@@ -19,15 +19,12 @@ export default async function NavBar() {
         <Link href="/spaces" className="navHeading">
           SPACES
         </Link>
-
-        <Link href="/map" className="navHeading">
-          MAP
-        </Link>
-
         <Link href="/programme" className="navHeading">
           PROGRAMME
         </Link>
-
+        <Link href="/map" className="navHeading">
+          MAP
+        </Link>
         <Link href="/contact" className="navHeading">
           CONTACT
         </Link>

@@ -42,7 +42,7 @@ export default function SignInForm(props: Props) {
 
   return (
     <form
-      className="pl-10 font-display tracking-widest text-lg"
+      className="pl-10 font-display tracking-widest text-base"
       onSubmit={async (event) => await handleRegister(event)}
     >
       DO YOU HAVE AN ACCOUNT? <br />
@@ -50,7 +50,6 @@ export default function SignInForm(props: Props) {
       <br />
       <br />
       <label>
-        Email
         <input
           className="input"
           type="email"
@@ -59,8 +58,8 @@ export default function SignInForm(props: Props) {
           onChange={(event) => setEmail(event.currentTarget.value)}
         />
       </label>
+      <br />
       <label>
-        Password
         <input
           className="input"
           type="Password"
@@ -70,7 +69,7 @@ export default function SignInForm(props: Props) {
         />
       </label>
       <br />
-      <button className="signButton">SIGN IN</button>
+      <button className="signButton">Sign In</button>
       {errors.map((error) => (
         <div className="error" key={`error-${error.message}`}>
           Error: {error.message}
