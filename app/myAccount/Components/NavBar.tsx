@@ -48,27 +48,3 @@ export default async function NavBar() {
     </div>
   );
 }
-
-// {
-//   user ? (
-//     <>
-//       <Link href="/admin">My Account</Link>
-//     </>
-//   ) : (
-//     <>
-//       <Link href="/myAccount">Sign In/Sign Up</Link>
-//       <Link href="/login">Login</Link>
-//     </>
-//   );
-// }
-
-// {
-//   /* <Link
-//           href="/myAccount"
-//           className="font-display font-[500]  items-center gap-x-2 p-1 text-4xl gap-80 text-indigo-300	hover:text-[#0000EE]
-
-//           "
-//         >
-//           My Account
-//         </Link> */
-// }
